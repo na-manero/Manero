@@ -1,0 +1,22 @@
+﻿﻿<section class="navbar">
+    <div class="container">
+        <nav class="nav-links">
+            <a class="nav-link" asp-action="Home" asp-controller="Default"><i class="fa-solid fa-house"></i></a>
+            <a class="nav-link disabled" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a class="nav-link disabled" href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+            <a class="nav-link disabled" href="#"><i class="fa-regular fa-heart"></i></a>
+            @if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                <a asp-controller="User" asp-action="Profile" class="nav-link">
+                    <i class="fa-regular fa-circle-user"></i>
+                </a>
+            }
+            else
+            {
+                <a asp-controller="Auth" asp-action="SignIn" class="nav-link">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                </a>
+            }
+        </nav>
+    </div>
+</section>

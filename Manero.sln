@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manero.Web", "Manero.Web\Manero.Web.csproj", "{D0DA2015-3DF2-450A-A7AA-A099F8803A53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manero.Lib", "Manero.Lib\Manero.Lib.csproj", "{7132AD36-68AC-4040-8838-DE6E368B7361}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0DA2015-3DF2-450A-A7AA-A099F8803A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0DA2015-3DF2-450A-A7AA-A099F8803A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0DA2015-3DF2-450A-A7AA-A099F8803A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0DA2015-3DF2-450A-A7AA-A099F8803A53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7132AD36-68AC-4040-8838-DE6E368B7361}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7132AD36-68AC-4040-8838-DE6E368B7361}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7132AD36-68AC-4040-8838-DE6E368B7361}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7132AD36-68AC-4040-8838-DE6E368B7361}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {683B49D3-BC44-4E6B-B5BB-18AEEE671A55}
+	EndGlobalSection
+EndGlobal

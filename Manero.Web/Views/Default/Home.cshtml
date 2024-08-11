@@ -1,0 +1,78 @@
+﻿@model ProductsViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+<section class="homepage">
+    <div class="container">
+        <div class="header">
+            <div class="burger-menu"></div>
+            <img src="/images/logo.svg" alt="">
+            <div class="cart-btn"></div>
+        </div>
+        <div class="content">
+            <div class="promotion">
+                <h2>Take 50% off!</h2>
+            </div>
+            <a asp-controller="Products" asp-action="Products" class="btn btn-white">Shop Now</a>
+        </div>
+        <div class="featured-products">
+            <div class="featured-header">
+                <h3>Featured products</h3>
+                <a asp-controller="Products" asp-action="Products" class="viewall">view all <i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+            <div class="featured-content">
+                @for (var i = 0; i < 4 && Model?.FeaturedProducts != null && i < Model.FeaturedProducts.Count; i++)
+                {
+                    <a asp-controller="Products" asp-action="@Model.Bestsellers[i].Id">
+                        <div class="featured-card">
+                            <div class="card-img">
+                                <img src="@Model.FeaturedProducts[i].ImgUrl" alt="" />
+                            </div>
+                            <div class="card-info">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                                <p>@Model.FeaturedProducts[i].ProductName</p>
+                                <p>$@Model.FeaturedProducts[i].Price</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+        <div class="bestseller-header">
+            <h3>Best seller</h3>
+            <a asp-controller="Products" asp-action="Products" class="viewall">view all <i class="fa-solid fa-chevron-right"></i></a>
+        </div>
+        <div class="bestseller-content">
+            @for (var i = 0; i < 3 && Model?.Bestsellers != null && i < Model.Bestsellers.Count; i++)
+            {
+                <a asp-controller="Products" asp-action="@Model.Bestsellers[i].Id">
+                    <div class="bestseller-card">
+                        <div class="bestseller-img">
+                            <img src="@Model.Bestsellers[i].ImgUrl" alt="" />
+
+                        </div>
+                        <div class="bestseller-feature">
+                            <div class="bestseller-info">
+                                <p>@Model.Bestsellers[i].ProductName</p>
+                                <p>$@Model.Bestsellers[i].Price</p>
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</section>

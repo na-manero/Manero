@@ -1,0 +1,58 @@
+﻿@model SignUpViewModel
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<section class="signup">
+    <div class="container">
+        <div class="top-nav">
+            <a href="javascript:history.go(-1)"><i class="fa-solid fa-chevron-left"></i></a>
+            <h4>Sign up</h4>
+        </div>
+        <h1>Sign Up</h1>
+        <form class="signup-form" method="post" asp-action="SignUp" asp-controller="Auth">
+            <div class="form-firstname input-group">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" />
+                <span asp-validation-for="FirstName"></span>
+            </div>
+            <div class="form-lastname input-group">
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" />
+                <span asp-validation-for="LastName"></span>
+            </div>
+            <div class="form-email input-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+            <div class="form-password input-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="form-confirm input-group">
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" />
+                <span asp-validation-for="ConfirmPassword"></span>
+            </div>
+            <button class="btn btn-main" type="submit">SIGN UP</button>
+        </form>
+        <p class="have-account font-16">Already have an account? <a asp-action="SignIn" asp-controller="Auth">Sign in.</a></p>
+
+        <div class="socials">
+            <a class="facebook disabled" href="./facebook.html">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a class="twitter disabled" href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a class="google disabled" href="#">
+                <i class="fa-brands fa-google-plus-g"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>

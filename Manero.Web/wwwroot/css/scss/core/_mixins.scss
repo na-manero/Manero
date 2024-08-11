@@ -1,0 +1,86 @@
+@mixin standard-text {
+    line-height: 160%;
+    font-weight: 400;
+    color: var(--color-text);
+}
+
+@mixin standard-heading {
+    @include standard-text;
+    line-height: 120% !important;
+    font-weight: 800;
+    color: var(--color-main);
+}
+
+@mixin font-nav {
+    @include standard-text;
+    font-size: 1em;
+    color: var(--color-gray-800);
+    font-weight: 600;
+}
+
+@mixin font-h1 {
+    @include standard-heading;
+    font-size: 2em !important;
+}
+
+@mixin font-h2 {
+@include standard-heading;
+font-size: 1.375em !important;
+}
+
+@mixin font-h3 {
+    @include standard-heading;
+    font-size: 1.25em !important;
+}
+
+
+@mixin font-h4 {
+    @include standard-heading;
+    font-size: 1.125em !important;
+}
+
+@mixin font-h5 {
+    @include standard-heading;
+    font-size: 1em !important;
+}
+
+@mixin font-16 {
+    @include standard-text;
+    line-height: 170% !important;
+    font-size: 1em;
+}
+
+@mixin font-14 {
+    @include standard-text;
+    line-height: 150% !important;
+    font-size: 0.875em;
+}
+
+h1 {
+    @include font-h1;
+}
+
+h2 {
+    @include font-h2;
+}
+
+h3 {
+    @include font-h3;
+}
+
+h4 {
+    @include font-h4;
+}
+
+h5 {
+    @include font-h5;
+}
+
+.font-16 {
+    @include font-16;
+}
+
+.font-14 {
+    @include font-14;
+}
+

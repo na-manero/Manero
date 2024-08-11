@@ -1,0 +1,31 @@
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: .5px solid var(--color-light-gray);
+    font-size: 1.5rem;
+    z-index: 50;
+    background: white;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        .nav-links {
+
+            .nav-link {
+                margin: 0 10px;
+                padding: 10px 12px;
+                color: var(--color-text);
+                border-radius: 50%;
+            }
+
+            .nav-link:hover, .nav-link:active {
+                color: var(--color-main);
+                background: var(--color-light-gray);
+            }
+        }
+    }
+}

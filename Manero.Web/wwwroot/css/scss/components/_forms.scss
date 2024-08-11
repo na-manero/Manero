@@ -1,0 +1,115 @@
+form {
+    width: 100%;
+    display: grid;
+    max-width: 40rem;
+
+    .input-group {
+        display: grid;
+
+        input {
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            background-color: var(--color-gray-000);
+            color: var(--color-gray-700);
+        }
+    }
+
+    .checkbox-group {
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    button {
+        margin: 1rem 0;
+    }
+
+    .field-validation-error {
+        font-size: 0.8rem;
+        color: var(--color-danger);
+        padding: 2px 5px;
+    }
+}
+
+textarea,
+select,
+input:not([type="checkbox"]) {
+    min-width: 300px;
+    font-weight: 400;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-gray-300);
+    background-color: var(--color-gray-000);
+    color: var(--color-gray-700);
+    resize: none;
+
+    &::placeholder {
+        opacity: 0.5;
+    }
+
+}
+
+.input-search-group {
+  position: relative;
+
+  input {
+    position: relative;
+    padding-right: 40px;
+
+  }
+
+  i {
+    position: absolute;
+    top: 14px;
+    right: 1rem;
+  }
+}
+
+.select {
+    position: relative;
+    min-width: 300px;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M5.5 7l4.5 4.5L14.5 7z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+    background-color: var(--color-gray-000);
+
+
+    .selected {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        border: 1px solid var(--color-gray-300);
+        cursor: pointer;
+    }
+
+    .select-options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-gray-000);
+        border: 1px solid var(--color-gray-300);
+        z-index: 10;
+
+        .option {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background-color: var(--color-gray-300);
+        }
+    }
+}
+
+input[type="checkbox"] {
+    height: 20px;
+    width: 20px;
+    margin: 0.1rem;
+}
