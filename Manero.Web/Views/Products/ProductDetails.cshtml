@@ -1,0 +1,57 @@
+﻿@model Product
+@{
+    ViewData["Title"] = Model?.ProductName ?? "Product";
+}
+
+<section class="product-details">
+        <partial name="~/Views/Partials/Sections/_Header.cshtml" />
+        <div class="container">
+            @if (Model != null)
+            {
+                <div class="product-content">
+                    <div class="top-content">
+                    <div class="img-container">
+                        <img src="@Model.ThumbnailImage" alt="" />
+                    </div>
+
+                        <div class="section-content">
+                            <div class="title-heart">
+                                <h2 class="product-title">@Model!.ProductName</h2>
+                            </div>
+                        </div>
+
+                        <div class="rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="section-content">
+                            <div class="adding">
+                                <div class="pricing">
+                                    <p class="original @(Model!.DiscountPrice.HasValue ? "discount-enabled" : "")">$@Model!.Price</p>
+                                    @if (@Model!.DiscountPrice.HasValue)
+                                    {
+                                        <p class="discount">$@Model!.DiscountPrice.Value</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-content">
+                        <div class="description-section">
+                            <h5 class="description-title">Description</h5>
+                            <p class="description-text">@Model!.ProductDescription</p>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p>Product not found.</p>
+            }
+        </div>
+</section>

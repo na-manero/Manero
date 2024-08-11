@@ -1,0 +1,20 @@
+// Core
+@import 'scss/core/_colors';
+@import 'scss/core/_base';
+@import 'scss/core/_mixins';
+@import 'scss/core/_utilities';
+@import 'scss/core/_common';
+
+// Components
+@import 'scss/components/_buttons';
+@import 'scss/components/_forms';
+
+// Sections
+@import 'scss//sections/_header';
+@import 'scss/sections/_home';
+@import 'scss/sections/_navbar';
+@import 'scss/sections/_signin';
+@import 'scss/sections/_signup';
+@import 'scss/sections/_products';
+@import 'scss/sections/_productdetails';
+@import 'scss/sections/_profile';

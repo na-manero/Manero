@@ -1,0 +1,40 @@
+﻿@model List<Product>
+
+<section class="products">
+    <div class="container">
+        <div class="feature-card">
+            @if (Model is not null)
+            {
+                @foreach (var product in Model)
+                {
+                    <a class="product" asp-controller="Products" asp-action="@product.Id">
+                        <div class="card-img">
+                            <img src="@product.ThumbnailImage" alt="@product.ProductName" />
+                            <div class="product-icons">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <h5 class="product-title">@product.ProductName</h5>
+                            <div class="pricing">
+                                <p class="original @(product.DiscountPrice.HasValue ? "discount-enabled" : "")">$@product.Price</p>
+                                @if (product.DiscountPrice.HasValue)
+                                {
+                                    <p class="discount">$@product.DiscountPrice.Value</p>
+                                }
+
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+</section>
