@@ -5,11 +5,11 @@
         <div class="profile">
             <div class="profile-img">
                 <img id="photoImage" src="@Model.ImageUrl" />
-                <div class="edit">
-                    <a asp-action="Edit" asp-controller="User">
-                        <i class="fa-thin fa-pen-line"></i>
-                    </a>
-                </div>
+                <a asp-action="Edit" asp-controller="User">
+                    <div class="edit">
+                            <i class="fa-solid fa-pen"></i>
+                    </div>
+                </a>
             </div>
             <div class="profile-info">
                 <h3>@Model.FirstName @Model.LastName </h3>
@@ -18,15 +18,8 @@
         </div>
         <div class="profile-menu">
              <a class="option" asp-action="SignOut" asp-controller="Auth">
-                <div class="info">
-                    <div class="image">
-                        <i class="fa-light fa-right-from-bracket"></i>
-                    </div>
-                    <h5>Sign out</h5>
-                </div>
-                <div class="Sign out">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                </div>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Sign out</p>
             </a>
         </div>
     </div>
