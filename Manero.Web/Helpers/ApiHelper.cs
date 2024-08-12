@@ -23,6 +23,11 @@ public class ApiHelper(HttpClient client, TimeSpan? retryDelay = null) : IApiHel
         return await ExecuteWithRetry(() => _client.PostAsync(url, content));
     }
 
+    public async Task<HttpResponseMessage> PostFormData(string url, MultipartFormDataContent file)
+    {
+        return await ExecuteWithRetry(() => _client.PostAsync(url, file));
+    }
+
     public async Task<T> GetAsync<T>(string url)
     {
         var response = await ExecuteWithRetry(() => _client.GetAsync(url));
@@ -30,10 +35,15 @@ public class ApiHelper(HttpClient client, TimeSpan? retryDelay = null) : IApiHel
         if (response.IsSuccessStatusCode)
         {
             var jsonResponse = await response.Content.ReadAsStringAsync();
-            return JsonSerializer.Deserialize<T>(jsonResponse, _jsonSerializerOptions)!;
+            return DeserializeJson<T>(jsonResponse); ;
         }
 
         return default!;
+    }
+
+    public T DeserializeJson<T>(string json)
+    {
+        return JsonSerializer.Deserialize<T>(json, _jsonSerializerOptions)!;
     }
 
     private async Task<HttpResponseMessage> ExecuteWithRetry(Func<Task<HttpResponseMessage>> operation)

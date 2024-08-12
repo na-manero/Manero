@@ -1,12 +1,13 @@
 ﻿@model UserViewModel
 
-<section class="edit-profile">
+<section class="edit-profile-page">
     <div class="container">
-        <div class="profile-img">
-            <img id="photoImage" src="@Model.ImageUrl" />
-            <form onsubmit="handleSubmit(event)" enctype="multipart/form-data">
-                <input id="file" type="file" name="file" hidden />
-                <label for="file"><i class="fa-thin fa-camera"></i></label>
+        <div class="edit-profile">
+        <div class="profile-img-container">
+            <img id="profile-img-edit" src="@Model.ImageUrl" />
+            <form class="edit" id="imageUploadForm" method="post" asp-action="UploadImage" asp-controller="User" enctype="multipart/form-data">
+                <input id="imgFile" type="file" name="file" hidden />
+                <label for="imgFile"><i class="fa-solid fa-camera"></i></label>
             </form>
         </div>
 
@@ -39,8 +40,15 @@
                     <span asp-validation-for="PhoneNumber"></span>
                 </div>
 
+                <div class="input-group">
+                    <label>LOCATION</label>
+                    <input asp-for="Location" />
+                    <span asp-validation-for="Location"></span>
+                </div>
+
                 <button class="btn btn-main" type="submit">SAVE CHANGES</button>
             </div>
         </form>
+        </div>
     </div>
 </section>
